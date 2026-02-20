@@ -1,7 +1,7 @@
 # 👋 Hi, I'm Syed Muhammed Shayan Uddin
 
 🚀 Cybersecurity Enthusiast | 🤖 AI Learner | 💻 Developer  
-CEH Certified | Offensive Security Focused
+CEH Certified | Offensive and Defensive Security Focused
 
 ## 🧠 About Me
 
