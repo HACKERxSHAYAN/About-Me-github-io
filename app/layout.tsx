@@ -3,15 +3,10 @@
 import { Inter, Roboto_Mono } from "next/font/google";
 import "./globals.css";
 import { useEffect, useState } from "react";
+import { metadata } from "./metadata";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const robotoMono = Roboto_Mono({ subsets: ["latin"], variable: "--font-roboto-mono" });
-
-// Metadata must be exported from a separate server component or file
-export const metadata = {
-  title: "Syed Muhammad Shayan Uddin | Cybersecurity & AI Expert",
-  description: "Portfolio of a Cybersecurity Enthusiast, Ethical Hacker, and AI Learner.",
-};
 
 // Client-side preloader component
 function Preloader() {
@@ -55,10 +50,11 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <head>
-        <meta name="referrer" content="strict-origin-when-cross-origin" />
-        <meta name="permissions-policy" content="camera=(), microphone=(), geolocation=()" />
         <title>{metadata.title}</title>
         <meta name="description" content={metadata.description} />
+        <meta name="keywords" content={metadata.keywords.join(', ')} />
+        <meta name="referrer" content="strict-origin-when-cross-origin" />
+        <meta name="permissions-policy" content="camera=(), microphone=(), geolocation=()" />
       </head>
       <body className={`${inter.variable} ${robotoMono.variable} bg-cyber-black text-white antialiased`}>
         <Preloader />
