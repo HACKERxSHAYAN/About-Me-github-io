@@ -8,12 +8,12 @@ const robotoMono = Roboto_Mono({ subsets: ["latin"], variable: "--font-roboto-mo
 
 export const metadata: Metadata = {
   title: "Syed Muhammad Shayan Uddin | Cybersecurity & AI Expert",
-  description: "Portfolio of a Cybersecurity Enthusiast, Ethical Hacker, and AI Learner. Specializing in penetration testing, network security, and AI-powered defense systems.",
-  keywords: ["Cybersecurity", "Ethical Hacker", "CEH", "AI", "Penetration Testing", "Network Security", "Portfolio"],
+  description: "Portfolio of a Cybersecurity Enthusiast, Ethical Hacker, and AI Learner.",
+  keywords: ["Cybersecurity", "Ethical Hacker", "CEH", "AI", "Portfolio"],
   authors: [{ name: "Syed Muhammad Shayan Uddin" }],
   openGraph: {
-    title: "Syed Muhammad Shayan Uddin | Cybersecurity & AI Expert",
-    description: "Portfolio of a Cybersecurity Enthusiast, Ethical Hacker, and AI Learner.",
+    title: "Syed Muhammad Shayan Uddin",
+    description: "Cybersecurity & AI Portfolio",
     type: "website",
   },
   robots: {
@@ -27,7 +27,6 @@ function Preloader() {
   const [isVisible, setIsVisible] = useState(true);
 
   useEffect(() => {
-    // Hide preloader after page loads
     const hidePreloader = () => {
       setTimeout(() => {
         setIsVisible(false);
@@ -65,7 +64,6 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <head>
-        {/* Security Meta Tags */}
         <meta name="referrer" content="strict-origin-when-cross-origin" />
         <meta name="permissions-policy" content="camera=(), microphone=(), geolocation=()" />
       </head>

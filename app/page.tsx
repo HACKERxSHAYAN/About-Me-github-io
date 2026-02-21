@@ -4,16 +4,16 @@ import dynamic from 'next/dynamic';
 import { motion } from 'framer-motion';
 
 // Dynamic import for ParticleBackground to avoid SSR issues
-const ParticleBackground = dynamic(() => import('./ParticleBackground'), {
+const ParticleBackground = dynamic(() => import('@/ParticleBackground'), {
   ssr: false,
   loading: () => <div className="fixed inset-0 z-[-1] bg-cyber-black" />
 });
 
-import Hero from './Hero';
-import About from './About';
-import Skills from './Skills';
-import Projects from './Projects';
-import Contact from './Contact';
+import Hero from '@/Hero';
+import About from '@/About';
+import Skills from '@/Skills';
+import Projects from '@/Projects';
+import Contact from '@/Contact';
 
 export default function Home() {
   return (
