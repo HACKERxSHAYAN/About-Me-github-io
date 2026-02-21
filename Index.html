@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Syed Muhammad Shayan Uddin - Cybersecurity Professional</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background: #050505;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Courier New', monospace;
+            overflow: hidden;
+        }
+
+        .loader-container {
+            text-align: center;
+        }
+
+        .loader {
+            width: 80px;
+            height: 80px;
+            border: 4px solid rgba(0, 243, 255, 0.2);
+            border-top: 4px solid #00f3ff;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 30px;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .loading-text {
+            color: #00f3ff;
+            font-size: 18px;
+            letter-spacing: 4px;
+            animation: pulse 1.5s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+
+        .progress-bar {
+            width: 300px;
+            height: 4px;
+            background: rgba(0, 243, 255, 0.2);
+            border-radius: 2px;
+            margin: 20px auto;
+            overflow: hidden;
+        }
+
+        .progress {
+            height: 100%;
+            background: linear-gradient(90deg, #00f3ff, #bd00ff);
+            width: 0%;
+            animation: load 2s ease-in-out forwards;
+        }
+
+        @keyframes load {
+            0% { width: 0%; }
+            100% { width: 100%; }
+        }
+
+        .version {
+            color: #666;
+            font-size: 12px;
+            margin-top: 30px;
+        }
+
+        .redirect-msg {
+            color: #888;
+            font-size: 14px;
+            margin-top: 20px;
+        }
+
+        .buttons {
+            margin-top: 30px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            margin: 10px;
+            background: linear-gradient(90deg, #00f3ff, #bd00ff);
+            color: #000;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+
+        .btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 20px rgba(0, 243, 255, 0.5);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid #00f3ff;
+            color: #00f3ff;
+        }
+
+        .btn-outline:hover {
+            background: #00f3ff;
+            color: #000;
+        }
+    </style>
+    <script>
+        // Auto redirect options
+        window.onload = function() {
+            setTimeout(function() {
+                // Option 1: Try to open standalone version (works without server)
+                // Just show buttons for user to choose
+                document.getElementById('loading').style.display = 'none';
+                document.getElementById('options').style.display = 'block';
+            }, 1500);
+        };
+    </script>
+</head>
+<body>
+    <div class="loader-container">
+        <div id="loading">
+            <div class="loader"></div>
+            <div class="loading-text">INITIALIZING SYSTEM...</div>
+            <div class="progress-bar">
+                <div class="progress"></div>
+            </div>
+            <p class="redirect-msg">Loading portfolio...</p>
+            <p class="version">v2.0 // NEXT.JS EDITION</p>
+        </div>
+
+        <div id="options" style="display: none;">
+            <div class="loader" style="border-color: rgba(189, 0, 255, 0.2); border-top-color: #bd00ff;"></div>
+            <h2 style="color: white; margin-bottom: 20px;">Choose Your Version</h2>
+            <p style="color: #888; margin-bottom: 30px;">Select how you want to view the portfolio</p>
+            
+            <div class="buttons">
+                <a href="standalone.html" class="btn">
+                    <i class="fas fa-external-link-alt"></i> OPEN FULL VERSION
+                </a>
+                <a href="javascript:window.location.reload()" class="btn btn-outline">
+                    <i class="fas fa-sync"></i> RELOAD
+                </a>
+            </div>
+            
+            <p class="version" style="margin-top: 40px;">
+                Tip: Open standalone.html directly in Chrome<br>
+                Or run: npm install && npm run dev
+            </p>
+        </div>
+    </div>
+</body>
+</html>
