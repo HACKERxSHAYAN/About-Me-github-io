@@ -1,4 +1,5 @@
-import type { Metadata } from "next";
+"use client";
+
 import { Inter, Roboto_Mono } from "next/font/google";
 import "./globals.css";
 import { useEffect, useState } from "react";
@@ -6,23 +7,13 @@ import { useEffect, useState } from "react";
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const robotoMono = Roboto_Mono({ subsets: ["latin"], variable: "--font-roboto-mono" });
 
-export const metadata: Metadata = {
+// Metadata must be exported from a separate server component or file
+export const metadata = {
   title: "Syed Muhammad Shayan Uddin | Cybersecurity & AI Expert",
   description: "Portfolio of a Cybersecurity Enthusiast, Ethical Hacker, and AI Learner.",
-  keywords: ["Cybersecurity", "Ethical Hacker", "CEH", "AI", "Portfolio"],
-  authors: [{ name: "Syed Muhammad Shayan Uddin" }],
-  openGraph: {
-    title: "Syed Muhammad Shayan Uddin",
-    description: "Cybersecurity & AI Portfolio",
-    type: "website",
-  },
-  robots: {
-    index: true,
-    follow: true,
-  },
 };
 
-// Client-side preloader component (SECURE - no dangerouslySetInnerHTML)
+// Client-side preloader component
 function Preloader() {
   const [isVisible, setIsVisible] = useState(true);
 
@@ -58,14 +49,16 @@ function Preloader() {
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
     <html lang="en" className="scroll-smooth">
       <head>
         <meta name="referrer" content="strict-origin-when-cross-origin" />
         <meta name="permissions-policy" content="camera=(), microphone=(), geolocation=()" />
+        <title>{metadata.title}</title>
+        <meta name="description" content={metadata.description} />
       </head>
       <body className={`${inter.variable} ${robotoMono.variable} bg-cyber-black text-white antialiased`}>
         <Preloader />
